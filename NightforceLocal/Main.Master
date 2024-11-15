@@ -1,0 +1,38 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main.master.cs" Inherits="Nightforce.ReticleCalculator.Main" %>
+
+<%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>Nightforce Velocity&#0153 Reticle Calculator</title>
+    <telerik:RadStyleSheetManager id="RadStyleSheetManager1" runat="server" />
+    <link href="Styles/NightforceStyle.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut Icon" type="image/png" href="/favicon.png" />
+    <script src="Scripts/Nightforce.js" type="text/javascript"></script>
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="NightforceForm" runat="server">
+        <telerik:RadScriptManager ID="RadScriptManager1" runat="server">
+		    <Scripts>
+			    <%--Needed for JavaScript IntelliSense in VS2010--%>
+			    <%--For VS2008 replace RadScriptManager with ScriptManager--%>
+			    <asp:ScriptReference Assembly="Telerik.Web.UI" Name="Telerik.Web.UI.Common.Core.js" />
+			    <asp:ScriptReference Assembly="Telerik.Web.UI" Name="Telerik.Web.UI.Common.jQuery.js" />
+			    <asp:ScriptReference Assembly="Telerik.Web.UI" Name="Telerik.Web.UI.Common.jQueryInclude.js" />
+		    </Scripts>
+	    </telerik:RadScriptManager>
+
+        <telerik:RadAjaxManager ID="RadAjaxManager1" runat="server" RestoreOriginalRenderDelegate="false">
+	    </telerik:RadAjaxManager>
+
+        <script src="Scripts/jquery-ui-1.8.5.custom.min.js" type="text/javascript"></script>
+
+        <asp:ContentPlaceHolder ID="MainContent" runat="server">
+        </asp:ContentPlaceHolder>
+    </form>
+</body>
+</html>
